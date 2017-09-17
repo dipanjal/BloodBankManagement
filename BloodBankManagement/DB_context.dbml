@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BloodBankDB" Class="DB_contextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\bin\Debug\BloodBankDB.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="BloodBankManagement.Properties.Settings" SettingsPropertyName="BloodBankDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Login" Member="UserLoginDatas">
+    <Type Name="UserLoginData">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="userroll" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="verfication" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="confirmVerification" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAddress" Member="UserAddrs">
+    <Type Name="UserAddr">
+      <Column Name="addID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="firstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mobileNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="district" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="subDistrict" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="postalCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="accountstatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserDtails" Member="UserDtails">
+    <Type Name="UserDtail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="addressID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bloodID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="URoll" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bloodGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="accountstatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="propicture" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BloodData" Member="BloodDatas">
+    <Type Name="BloodData">
+      <Column Name="bloodID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bloodGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bloodReport" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="donated" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="requested" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accountstatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BloodInventory" Member="BloodInventories">
+    <Type Name="BloodInventory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="bloodgroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bloodquantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTempData" Member="UserTempDatas">
+    <Type Name="UserTempData">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="requestType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="requestStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bloodgroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bloodstatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.History" Member="Histories">
+    <Type Name="History">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="requestType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
